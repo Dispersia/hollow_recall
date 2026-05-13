@@ -105,6 +105,11 @@ sdk.dir=${androidSdk}
 flutter.sdk=${pkgs.flutter}
 PROPS
 
+            rm -rf android/.flutter-gradle-plugin
+            cp -rL --no-preserve=mode ${pkgs.flutter}/packages/flutter_tools/gradle android/.flutter-gradle-plugin
+            rm -f android/.flutter-gradle-plugin/settings.gradle
+            sed -i '1i rootProject.name = "flutter-gradle-plugin"' android/.flutter-gradle-plugin/settings.gradle.kts
+
             export PATH="$ANDROID_SDK_ROOT/platform-tools:$PATH"
 
             export XDG_DATA_DIRS="${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}:$XDG_DATA_DIRS"
