@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
+            VALUE "CompanyName", "io.dispersia" "\0"
             VALUE "FileDescription", "hollow_recall" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "hollow_recall" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 com.example. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 io.dispersia. All rights reserved." "\0"
             VALUE "OriginalFilename", "hollow_recall.exe" "\0"
             VALUE "ProductName", "hollow_recall" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
