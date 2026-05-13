@@ -96,10 +96,15 @@
 
           ANDROID_SDK_ROOT = androidSdk;
           ANDROID_HOME = androidSdk;
-          JAVA_HOME = pkgs.jdk21;
+          JAVA_HOME = "${pkgs.jdk21}/lib/openjdk";
           JAVA_TOOL_OPTIONS = "-Dcom.jetbrains.ls.imports.gradle.java.home=${pkgs.jdk21}";
 
           shellHook = ''
+            cat > android/local.properties <<PROPS
+sdk.dir=${androidSdk}
+flutter.sdk=${pkgs.flutter}
+PROPS
+
             export PATH="$ANDROID_SDK_ROOT/platform-tools:$PATH"
 
             export XDG_DATA_DIRS="${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}:$XDG_DATA_DIRS"
